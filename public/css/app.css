@@ -215,3 +215,46 @@ body::after {
         transform: rotate(360deg) scale(1.25);
     }
 }
+
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 600px) {
+  body {
+    padding: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .user-card {
+    max-width: 100%;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+  }
+
+  .user-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .fullName {
+    font-size: 1.1rem;
+  }
+
+  .username {
+    font-size: 0.9rem;
+  }
+
+  .input-element {
+    padding: 0.7rem 2.2rem 0.7rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .submit {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    font-size: 0.8rem;
+  }
+}
