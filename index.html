@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Card - Space UI</title>
+  <link rel="stylesheet" href="public/css/app.css" />
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+  <article class="user-card">
+    <header>
+      <img src="public/images/female.png" class="user-avatar" alt="avatar" />
+      <div class="user-hero-data">
+        <p class="fullName"></p>
+        <p class="username">peymangeek@</p>
+      </div>
+    </header>
+    <main>
+      <div>
+        <label for="email">ایمیل</label>
+        <div class="input-card">
+          <input type="text" id="email" value="peymangeek@gmail.com" class="input-element" readonly
+            aria-readonly="true" />
+          <span class="icon"><i class="fas fa-envelope"></i></span>
+        </div>
+      </div>
+      <div>
+        <label for="city">شهر</label>
+        <div class="input-card">
+          <input type="text" id="city" value="Tehran" class="input-element" readonly aria-readonly="true" />
+          <span class="icon"><i class="fas fa-city"></i></span>
+        </div>
+      </div>
+      <div>
+        <label for="password">گذرواژه</label>
+        <div class="input-card">
+          <input type="text" id="password" value="Ahmadi1349" class="input-element" readonly aria-readonly="true" />
+          <span class="icon"><i class="fas fa-lock"></i></span>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <button class="submit" onclick="showNewUser()">نمایش کاربر جدید</button>
+      <span class="copyright">
+        <a target="_blank" href="https://sabzlearn.ir">Ruhollah Hosseini</a>
+        <i class="fa-brands fa-telegram"></i>
+      </span>
+    </footer>
+  </article>
+
+  <script src="js/scriptSryle.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
