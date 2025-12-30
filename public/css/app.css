@@ -16,7 +16,6 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    /* فاصله امن موبایل */
     color: #e0e0ff;
     overflow-x: hidden;
     position: relative;
@@ -38,24 +37,7 @@ body::before {
     animation: starsTwinkle 6s ease-in-out infinite alternate;
     opacity: 0.5;
     pointer-events: none;
-}
-
-/* نِبیولا و ستاره‌های درشت */
-body::after {
-    content: "";
-    position: absolute;
-    inset: -30%;
-    background:
-        radial-gradient(2.5px 2.5px at 20% 35%, rgba(0, 240, 255, 0.9), transparent),
-        radial-gradient(3px 3px at 75% 25%, rgba(255, 0, 200, 0.8), transparent),
-        radial-gradient(2px 2px at 60% 80%, rgba(180, 180, 255, 0.8), transparent),
-        radial-gradient(circle at 30% 40%, rgba(0, 240, 255, 0.22), transparent 60%),
-        radial-gradient(circle at 70% 60%, rgba(139, 92, 246, 0.22), transparent 65%),
-        radial-gradient(circle at 50% 50%, rgba(255, 0, 180, 0.16), transparent 70%);
-    filter: blur(90px);
-    animation: galaxyDrift 45s linear infinite;
-    opacity: 0.8;
-    pointer-events: none;
+    z-index: 0;
 }
 
 /* ======================
@@ -72,6 +54,10 @@ body::after {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
 }
 
@@ -167,7 +153,6 @@ footer a:hover {
 @media (max-width: 480px) {
     body {
         padding: 1.2rem;
-        /* فاصله از دو طرف */
     }
 
     .user-card {
@@ -208,12 +193,41 @@ footer a:hover {
     }
 }
 
-@keyframes galaxyDrift {
-    from {
-        transform: rotate(0deg) scale(1);
+
+/* پس‌زمینه سایبرپانک به جای ستاره‌های ریز */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, #ff00ff, transparent),
+        radial-gradient(2px 2px at 25% 80%, #00ffff, transparent),
+        radial-gradient(2px 2px at 40% 60%, #ff0099, transparent),
+        radial-gradient(2px 2px at 70% 30%, #6600ff, transparent),
+        radial-gradient(2px 2px at 85% 75%, #ff00cc, transparent),
+        linear-gradient(90deg, rgba(255, 0, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 100px 100px, 100px 100px, 100px 100px, 50px 50px, 50px 50px;
+    animation: cyberTwinkle 4s linear infinite alternate;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* انیمیشن چشمک زدن نئون */
+@keyframes cyberTwinkle {
+    0% {
+        opacity: 0.4;
+        transform: translate(0, 0);
     }
 
-    to {
-        transform: rotate(360deg) scale(1.25);
+    50% {
+        opacity: 0.7;
+        transform: translate(2px, 2px);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: translate(-2px, -2px);
     }
 }
