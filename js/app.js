@@ -4,7 +4,6 @@ const showNewUser = () => {
     .then((userData) => {
       const user = userData.results[0];
 
-
       const userGender = ("Gender:", user.gender);
       const userPassword = ("password:", user.login.password);
       const userUserName = ("password:", user.login.username);
@@ -12,8 +11,9 @@ const showNewUser = () => {
       const userLastName = ("Last Name:", user.name.last);
       const userEmail = ("Email:", user.email);
       const userCountry = ("Country:", user.location.country);
+      const userCity = ("City:", user.location.city);
 
-      $city.value = userCountry;
+      $city.value = ` ${userCity}, ${userCountry}`;
       $email.value = userEmail;
       $password.value = userPassword;
       $fullName.innerHTML = `${userFirstName} ${userLastName}`;
